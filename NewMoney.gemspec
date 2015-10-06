@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["M.Ravi"]
   spec.email         = ["mondi.ravi@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{A simple money data type implementation. Allows creation, arithmetic operations, comparisons, conversions amongs different currencies.}
+  spec.description   = %q{A simple money data type implementation. Allows creation, arithmetic operations, comparisons, conversions amongs different currencies.}
+  spec.homepage      = " https://github.com/pcoder/NewMoney.git"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
