@@ -1,7 +1,10 @@
 class Money
-	@@base_currency = ""
-	@@other_currencies = {}
+	
+	# a class variable to store all available currencies
+	# shared amongst all the objects
+	@@currencies = {}
 
+	# read attibute accessor for amount and currency data
 	attr_reader :amount, :currency
 		
 	# constructor
@@ -12,14 +15,17 @@ class Money
 		@currency = currency
 	end
 	
-	# Function to declare the different rates for currencies
+	# Function to declare the different currencies and their rates 
 	def self.conversion_rates(base_currency, other_currencies)
-		@@base_currency = base_currency
-		@@other_currencies = other_currencies
-		@@other_currencies.merge!(@@base_currency => 1)	
+		bc = base_currency
+		@@currencies = other_currencies
+		@@currencies.merge!(bc => 1)	
 	end
 	
 	# Function to format money
+	# We need the money represented to two decimal points with the corresponding currency
+	# Example 50.00 EUR
+ 
 	def format(value, currency)
 		sprintf('%.2f', value) + " " + currency 
 	end
@@ -35,14 +41,18 @@ class Money
 	# Basic idea is if the desired currency is different from the base 
 	# currency then find the conversion factor and multiply it with the 
 	# amount 
-	
+	# If it is the same, we don't need a conversion
+
+	# Returns the converted value in the desired_currency
+	# If the desired_currency does not exist; returns a String
+		
 	def get_converted_value(desired_currency)
 		if desired_currency == @currency
 			@amount	
 		else
 		    # compute the conversion rate
-		    if @@other_currencies.has_key?(desired_currency)
-			conversion_factor = (@@other_currencies[desired_currency]/@@other_currencies[@currency])
+		    if @@currencies.has_key?(desired_currency)
+			conversion_factor = (@@currencies[desired_currency]/@@currencies[@currency])
 			conversion_factor * @amount
 		    else
 			"Conversion rate not available for " + desired_currency
@@ -62,9 +72,11 @@ class Money
 			Money.new(value, desired_currency)
 		end
 	end
-	
+
+	# Function that returns the existing hash of currencies and their corresponding rates
+		
 	def get_currencies
-		@@other_currencies
+		@@currencies
 	end
 	
 	# Arithmetic operators overloading
