@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{A simple money data type implementation. Allows creation, arithmetic operations, comparisons, conversions amongs different currencies.}
   spec.description   = %q{A simple money data type implementation. Allows creation, arithmetic operations, comparisons, conversions amongs different currencies.}
-  spec.homepage      = " https://github.com/pcoder/NewMoney.git"
+  spec.homepage      = "https://github.com/pcoder/NewMoney.git"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
