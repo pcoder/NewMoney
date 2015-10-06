@@ -1,4 +1,4 @@
-# Ravimoney
+# NewMoney
 
 A simple money implementation. Helps in creation, conversion, comparison and arithmetic operations with money.
 
@@ -21,7 +21,7 @@ Or install it yourself as:
 ## Usage
 
 
-# Configure the currency rates with respect to a base currency (here EUR):
+### Configure the currency rates with respect to a base currency (here EUR):
 
 ```ruby
 Money.conversion_rates('EUR', {
@@ -29,29 +29,29 @@ Money.conversion_rates('EUR', {
  'Bitcoin' => 0.0047
 })
 ```
-# Instantiate money objects:
+### Instantiate money objects:
 
 ```ruby
 fifty_eur = Money.new(50, 'EUR')
 ```
-# Get amount and currency:
+### Get amount and currency:
 
 ```ruby
 fifty_eur.amount   # => 50
 fifty_eur.currency # => "EUR"
 fifty_eur.inspect  # => "50.00 EUR"
 ```
-# Convert to a different currency:
+### Convert to a different currency:
 
 ```ruby
 fifty_eur.convert_to('USD') # => 55.72 USD
 ```
-# Perform operations in different currencies:
+### Perform operations in different currencies:
 
 ```ruby
 twenty_dollars = Money.new(20, 'USD')
 ```
-# Arithmetics:
+### Arithmetics:
 
 ```ruby
 fifty_eur + twenty_dollars # => 67.95 EUR
@@ -60,7 +60,7 @@ fifty_eur / 2              # => 25 EUR
 twenty_dollars * 3         # => 60 USD
 
 ```
-# Comparisons (also in different currencies):
+### Comparisons (also in different currencies):
 
 ```ruby
 twenty_dollars == Money.new(20, 'USD') # => true
@@ -86,7 +86,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/ravimoney. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/newmoney. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
 
 
 ## License
